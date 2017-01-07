@@ -1,0 +1,44 @@
+
+
+
+opencv-python
+scikit-image
+
+PIL
+nolearn
+keras
+
+
+
+{
+	name:['바지1', '바지2', '바지3'],
+	price:[
+		{
+			name:'price',
+			data:[1000,200,300]
+		}
+	]
+
+}
+
+
+JSONObject jo
+JSONArray nameja
+JSONArray priceja
+JSONObject pricejo
+
+for (Object obj:list){
+	ProductVO p = (ProductVO)obj;
+	nameja.add(p.getName());
+	dataja.add(p.getPrice());
+}
+pricejo.put("name","price")
+pricejo.put("data",dataja)
+
+priceja.add(pricejo)
+jo.put("name", nameja)
+jo.put("price", priceja)
+
+PrintWriter out = response.getWriter();
+
+
